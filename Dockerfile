@@ -1,6 +1,6 @@
 FROM n8nio/n8n:latest
 USER root
 WORKDIR /data
-RUN apk add --update --no-cache python3 curl
+RUN apk add --update --no-cache python3 curl py3-pip
 RUN pip3 install --no-cache --upgrade pip setuptools
 RUN pip3 install --no-cache gradio_client

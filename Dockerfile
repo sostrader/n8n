@@ -1,6 +1,9 @@
 FROM n8nio/n8n:latest
 USER root
-RUN npm install -g @gradio/client
-RUN cd /usr/local/lib/node_modules/n8n && \
-    npm install @gradio/client 
+RUN apk add --update python3 py3-pip
+# installs requests library
+RUN python3 -m pip install requests
+RUN python3 -m pip install gradio_client
+# upgrades pip (not necessary)
+RUN python3 -m pip install --upgrade pip
 USER node

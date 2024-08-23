@@ -5,4 +5,3 @@ RUN npm install -g \
     langfuse@3.18.0 \
     langfuse-langchain@3.18.0 \
     @gradio/client
-USER node

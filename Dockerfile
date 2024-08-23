@@ -1,4 +1,4 @@
-FROM n8nio/n8n:latest
+FROM --platform=linux/amd64 n8nio/n8n:latest
 USER root
 RUN apk add make gcc g++ python3
 ENV NODE_TLS_REJECT_UNAUTHORIZED=0

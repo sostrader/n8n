@@ -12,7 +12,7 @@ RUN --mount=type=cache,id=pnpm-store,target=/root/.local/share/pnpm/store --moun
 RUN pnpm build
 
 # Install @gradio/client and langfuse
-RUN pnpm install --frozen-lockfile @gradio/client langfuse@3.18.0 langfuse-langchain@3.18.0
+RUN npm install @gradio/client langfuse@3.18.0 langfuse-langchain@3.18.0
 
 # Delete all dev dependencies
 RUN jq 'del(.pnpm.patchedDependencies)' package.json > package.json.tmp; mv package.json.tmp package.json

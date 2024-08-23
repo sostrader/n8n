@@ -1,8 +1,7 @@
 FROM n8nio/n8n:latest
 USER root
-RUN apk add --no-cache --virtual .build-deps make gcc g++ python3 
-RUN npm install --production --silent 
-RUN apk del .build-deps
+RUN apk add make gcc g++ python3
+ENV NODE_TLS_REJECT_UNAUTHORIZED=0
 RUN npm install -g \
     langfuse@3.18.0 \
     langfuse-langchain@3.18.0 \

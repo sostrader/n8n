@@ -10,7 +10,7 @@ RUN apk add --no-cache make gcc g++ python3
 WORKDIR /usr/local/lib/node_modules/n8n
 
 # Instala as dependências do Gradio e Langfuse
-RUN npm install @gradio/client langfuse@3.18.0 langfuse-langchain@3.18.0
+RUN npm install @gradio/client@0.20.1 langfuse@3.18.0 langfuse-langchain@3.18.0
 
 USER node
 

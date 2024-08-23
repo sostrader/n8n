@@ -9,7 +9,7 @@ COPY . /src
 RUN --mount=type=cache,id=pnpm-store,target=/root/.local/share/pnpm/store --mount=type=cache,id=pnpm-metadata,target=/root/.cache/pnpm/metadata pnpm install --frozen-lockfile
 RUN pnpm build
 
-# Install @gradio/client
+# Install @gradio/client and langfuse
 RUN pnpm install --frozen-lockfile @gradio/client langfuse@3.18.0 langfuse-langchain@3.18.0
 
 # Delete all dev dependencies
@@ -34,15 +34,14 @@ WORKDIR /home/node
 COPY --from=builder /compiled /usr/local/lib/node_modules/n8n
 COPY docker/images/n8n/docker-entrypoint.sh /
 
-RUN \\
-    cd /usr/local/lib/node_modules/n8n && \\
-    npm rebuild sqlite3 && \\
-    cd - && \\
-    ln -s /usr/local/lib/node_modules/n8n/bin/n8n /usr/local/bin/n8n && \\
-    mkdir .n8n && \\
+RUN \
+    cd /usr/local/lib/node_modules/n8n && \
+    npm rebuild sqlite3 && \
+    cd - && \
+    ln -s /usr/local/lib/node_modules/n8n/bin/n8n /usr/local/bin/n8n && \
+    mkdir .n8n && \
     chown node:node .n8n
 
 ENV SHELL /bin/sh
 USER node
-ENTRYPOINT ["tini", "--", "/docker-entrypoint.sh"] 
-
+ENTRYPOINT ["tini", "--", "/docker-entrypoint.sh"]

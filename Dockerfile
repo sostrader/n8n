@@ -10,7 +10,7 @@ RUN apk add --no-cache make gcc g++ python3
 WORKDIR /usr/local/lib/node_modules
 
 
-RUN npm install @gradio/client langfuse@3.18.0 langfuse-langchain@3.18.0 duck-duck-scrape 
+RUN npm install langfuse@3.18.0 langfuse-langchain@3.18.0 duck-duck-scrape odoo-await 
 
 # Imagem final
 FROM n8nio/n8n:latest

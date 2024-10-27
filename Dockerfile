@@ -15,7 +15,7 @@ RUN npm install langfuse@3.18.0 langfuse-langchain@3.18.0 duck-duck-scrape odoo-
 # Imagem final
 FROM n8nio/n8n:latest
 USER root
-RUN pip install gradio_client
+
 # Copia as dependências globais instaladas da etapa de construção
 COPY --from=builder /usr/local/lib/node_modules /usr/local/lib/node_modules
 # Instala as dependências do Gradio e Langfuse globalmente

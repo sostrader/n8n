@@ -10,7 +10,7 @@ RUN apk add --no-cache make gcc g++ python3
 WORKDIR /usr/local/lib/node_modules
 
 
-RUN npm install langfuse@3.18.0 langfuse-langchain@3.18.0 duck-duck-scrape odoo-await @mozilla/readability arxiv-api google-trends-api-code archive-search
+RUN npm install langfuse@3.18.0 langfuse-langchain@3.18.0 duck-duck-scrape odoo-await @mozilla/readability arxiv-api google-trends-api-code archive-search semanticscholarjs
 
 # Imagem final
 FROM n8nio/n8n:latest

@@ -23,8 +23,9 @@ RUN npm install \
     n8n-nodes-pdfkit \
     n8n-nodes-carbonejs
 
+
 # Imagem final
-FROM n8nio/n8n:1.68.0
+FROM n8nio/n8n:latest
 USER root
 RUN apk --update --no-cache --purge add libreoffice-common
 # Copia as dependências globais instaladas da etapa de construção

@@ -21,7 +21,8 @@ RUN npm install \
     semanticscholarjs \
     n8n-nodes-pdf-to-imgs \
     n8n-nodes-pdfkit \
-    n8n-nodes-carbonejs
+    n8n-nodes-carbonejs \
+    selic
 
 # Imagem final
 FROM n8nio/n8n:latest

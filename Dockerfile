@@ -23,7 +23,6 @@ RUN npm install \
     n8n-nodes-pdfkit \
     n8n-nodes-carbonejs
 
-
 # Imagem final
 FROM n8nio/n8n:latest
 USER root

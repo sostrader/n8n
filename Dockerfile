@@ -22,7 +22,8 @@ RUN npm install \
     n8n-nodes-pdf-to-imgs \
     n8n-nodes-pdfkit \
     n8n-nodes-carbonejs \
-    selic
+    selic \
+    calculatorreadjustment
 
 # Imagem final
 FROM n8nio/n8n:latest

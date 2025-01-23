@@ -1,5 +1,5 @@
 # Etapa de construção
-FROM --platform=linux/amd64 n8nio/n8n:1.68.0 AS builder
+FROM --platform=linux/amd64 n8nio/n8n:latest AS builder
 
 USER root
 
@@ -8,7 +8,6 @@ RUN apk add --no-cache make gcc g++ python3
 RUN apk --update --no-cache --purge add libreoffice-common
 
 WORKDIR /usr/local/lib/node_modules
-
 
 RUN npm install \
     langfuse@3.18.0 \
@@ -27,7 +26,7 @@ RUN npm install \
     calculatorreadjustment
 
 # Imagem final
-FROM n8nio/n8n:1.73.1
+FROM n8nio/n8n:latest
 USER root
 RUN apk --update --no-cache --purge add libreoffice-common
 # Copia as dependências globais instaladas da etapa de construção

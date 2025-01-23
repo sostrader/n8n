@@ -1,5 +1,5 @@
 # Etapa de construção
-FROM --platform=linux/amd64 n8nio/n8n:latest AS builder
+FROM --platform=linux/amd64 n8nio/n8n:1.76.1 AS builder
 
 USER root
 
@@ -26,7 +26,7 @@ RUN npm install \
     calculatorreadjustment
 
 # Imagem final
-FROM n8nio/n8n:latest
+FROM n8nio/n8n:1.76.1
 USER root
 RUN apk --update --no-cache --purge add libreoffice-common
 # Copia as dependências globais instaladas da etapa de construção

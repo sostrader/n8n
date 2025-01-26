@@ -13,6 +13,7 @@ RUN npm install \
     langfuse@3.18.0 \
     langfuse-langchain@3.18.0 \
     duck-duck-scrape \
+    duckduckgo-search-api \
     odoo-await \
     @mozilla/readability \
     arxiv-api \

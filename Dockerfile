@@ -5,7 +5,7 @@ USER root
 
 # Instala as dependências necessárias para a construção
 RUN apk add --no-cache make gcc g++ python3
-RUN apk --update --no-cache --purge add libreoffice-common
+RUN apk --update --no-cache --purge add ffmpeg
 
 WORKDIR /usr/local/lib/node_modules
 
@@ -24,7 +24,8 @@ RUN npm install \
     n8n-nodes-pdfkit \
     n8n-nodes-carbonejs \
     selic \
-    calculatorreadjustment
+    calculatorreadjustment \
+    ffmpeg
 
 # Imagem final
 FROM n8nio/n8n:latest

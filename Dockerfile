@@ -6,7 +6,14 @@ USER root
 # Instala as dependências necessárias para a construção
 RUN apk add --no-cache make gcc g++ python3
 
-
+RUN apk --update --no-cache --purge add libreoffice-common \
+    chromium \
+    nss \
+    freetype \
+    harfbuzz \
+    ca-certificates \
+    ttf-freefont \
+    su-exec
 
 
 WORKDIR /usr/local/lib/node_modules

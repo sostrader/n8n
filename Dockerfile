@@ -6,6 +6,20 @@ USER root
 # Instala as dependências necessárias para a construção
 
 RUN apk add --no-cache make gcc g++ python3
+RUN apk add --no-cache \
+    chromium \
+    nss \
+    freetype \
+    harfbuzz \
+    ca-certificates \
+    ttf-freefont \
+    su-exec
+
+ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=false
+ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium-browser
+
+RUN npm install -g puppeteer && \
+    npm cache clean --force
 
 WORKDIR /usr/local/lib/node_modules
 
@@ -21,7 +35,8 @@ RUN npm install \
     archive-search \
     semanticscholarjs \
     selic \
-    calculatorreadjustment 
+    calculatorreadjustment \
+    n8n-nodes-youtube-transcript
 
 
 # Imagem final
@@ -41,7 +56,7 @@ RUN apk add --no-cache \
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=false
 ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium-browser
 
-RUN npm install -g puppeteer n8n && \
+RUN npm install -g puppeteer && \
     npm cache clean --force
 
 # Copia as dependências globais instaladas da etapa de construção

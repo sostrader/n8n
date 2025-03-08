@@ -4,7 +4,8 @@ FROM --platform=linux/amd64 n8nio/n8n:latest AS builder
 USER root
 
 # Instala as dependências necessárias para a construção
-RUN apk --update && apk add --no-cache make gcc g++ python3
+RUN apk --update 
+RUN apk add --no-cache make gcc g++ python3
 
 WORKDIR /usr/local/lib/node_modules
 

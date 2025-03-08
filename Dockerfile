@@ -21,8 +21,7 @@ RUN npm install \
     archive-search \
     semanticscholarjs \
     selic \
-    calculatorreadjustment \
-    @anpigon/n8n-nodes-youtube-transcript
+    calculatorreadjustment 
 
 
 # Imagem final

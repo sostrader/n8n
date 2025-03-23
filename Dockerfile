@@ -17,7 +17,8 @@ RUN npm install \
     archive-search \
     semanticscholarjs \
     selic \
-    calculatorreadjustment 
+    calculatorreadjustment \
+    n8n-nodes-mcp
 
 # Imagem final
 FROM n8nio/n8n:latest

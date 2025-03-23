@@ -8,7 +8,6 @@ RUN apk add --no-cache make gcc g++
 
 
 WORKDIR /usr/local/lib/node_modules
-
 RUN npm install \
     langfuse@3.18.0 \
     langfuse-langchain@3.18.0 \

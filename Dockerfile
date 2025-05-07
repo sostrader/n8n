@@ -6,7 +6,6 @@ USER root
 # Instala as dependências necessárias para a construção
 RUN apk add --no-cache make gcc g++ 
 
-
 WORKDIR /usr/local/lib/node_modules
 RUN npm install \
     langfuse@3.18.0 \

@@ -16,7 +16,8 @@ RUN npm install \
     archive-search \
     semanticscholarjs \
     selic \
-    calculatorreadjustment 
+    calculatorreadjustment \
+    n8n-nodes-evolution-api
 
 
 # Imagem final

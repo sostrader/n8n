@@ -2,7 +2,6 @@
 FROM --platform=linux/amd64 n8nio/n8n:latest AS builder
 
 USER root
-
 # Instala as dependências necessárias para a construção
 RUN apk add --no-cache make gcc g++ 
 

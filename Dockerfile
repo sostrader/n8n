@@ -8,13 +8,8 @@ RUN apk add --no-cache make gcc g++
 
 WORKDIR /usr/local/lib/node_modules
 RUN npm install \
-    @mozilla/readability \
-    arxiv-api \
-    google-trends-api-code \
-    archive-search \
-    semanticscholarjs \
-    selic \
-    calculatorreadjustment 
+    @mozilla/readability 
+
 
 
 

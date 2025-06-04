@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "langfuse": "^3.18.0"
+  }
+}

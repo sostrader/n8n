@@ -8,20 +8,20 @@ RUN apk add --no-cache make gcc g++
 
 WORKDIR /usr/local/lib/node_modules
 RUN npm install \
-    langfuse@3.18.0 \
-    langfuse-langchain@3.18.0 \
+    langfuse \
+    langfuse-langchain \
     @mozilla/readability \
-    arxiv-api \
-    google-trends-api-code \
-    archive-search \
-    semanticscholarjs \
-    selic \
-    calculatorreadjustment 
+    # arxiv-api \
+    # google-trends-api-code \
+    # archive-search \
+    # semanticscholarjs \
+    # selic \
+    # calculatorreadjustment 
 
 
 
-# Imagem final
-FROM n8nio/n8n:latest
+    # Imagem final
+    FROM n8nio/n8n:latest
 USER root
 
 # Copia as dependências globais instaladas da etapa de construção

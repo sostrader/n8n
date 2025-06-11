@@ -22,7 +22,7 @@ USER root
 COPY --from=builder /usr/local/lib/node_modules /usr/local/lib/node_modules
 # Instala as dependências do Gradio e Langfuse globalmente
 RUN npm install -g \
-    langfuse@3latest \
-    langfuse-langchain@latest 
-
+    langfuse@latest \
+    langfuse-langchain@latest \
+    wav
 USER node

@@ -8,7 +8,11 @@ RUN apk add --no-cache make gcc g++
 
 WORKDIR /usr/local/lib/node_modules
 RUN npm install \
-    @mozilla/readability 
+    @mozilla/readability \
+    langfuse@3latest \
+    langfuse-langchain@latest
+
+
 
 
 
@@ -19,10 +23,6 @@ USER root
 
 # Copia as dependências globais instaladas da etapa de construção
 COPY --from=builder /usr/local/lib/node_modules /usr/local/lib/node_modules
-# Instala as dependências do Gradio e Langfuse globalmente
-RUN npm install -g \
-    langfuse@3latest \
-    langfuse-langchain@latest \
-    wav
+
 
 USER node

@@ -10,10 +10,6 @@ WORKDIR /usr/local/lib/node_modules
 RUN npm install \
     @mozilla/readability 
 
-
-
-
-
 # Imagem final
 FROM n8nio/n8n:latest
 USER root

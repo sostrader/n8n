@@ -19,5 +19,6 @@ COPY --from=builder /usr/local/lib/node_modules /usr/local/lib/node_modules
 RUN npm install -g \
     langfuse@latest \
     langfuse-langchain@latest \
+    @langfuse/n8n-nodes-langfuse \
     wav
 USER node

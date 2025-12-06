@@ -21,5 +21,6 @@ RUN npm install -g \
     langfuse@latest \
     langfuse-langchain@latest \
     @langfuse/n8n-nodes-langfuse \
-    wav
+    wav \
+    n8n-nodes-gemini-search
 USER node
